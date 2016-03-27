@@ -2,3 +2,12 @@ h1 {
 	font-family: 'Grand Hotel', cursive;
 	text-align: center;
 }
+
+.navbar-default {
+  background-color: #C188D8;
+  border-color: #C188D8;
+}
+
+.navbar {
+	margin-bottom: 0px;
+}
