@@ -20,11 +20,10 @@ function config($stateProvider, $urlRouterProvider, $locationProvider) {
         controller: 'HomeController',
         controllerAs: 'home',
         templateUrl: "templates/home.html"
-        // template: 'Home!'
       });
   }
 
-  app.controller('HomeController', HomeController);
+app.controller('HomeController', HomeController);
 
 
 function HomeController(Icecream) {

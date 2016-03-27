@@ -2,13 +2,3 @@ h1 {
 	font-family: 'Grand Hotel', cursive;
 	text-align: center;
 }
-
-.droppable {
-	width: 500px;
-	height: 500px;
-	border: 1px solid;
-}
-
-#drag {
-	background-color: red;
-}
