@@ -1,1 +1,27 @@
 <h1>hello from home.html</h1>
+
+<div class="container">	
+	<form ng-submit="home.createIcecream()">
+		<input type="text" ng-model="home.Icecream.flavor" placeholder="Flavor">
+		<input type="submit" value="Add Ice Cream">
+	</form><Br><br>
+
+	<div ng-repeat="todo in home.icecreams">
+	<div ng-hide="home.displayEditForm">
+
+	          {{icecream.flavor}}
+	          <!-- edit/delete buttons -->
+	          <i class="fa fa-pencil" ng-click="home.displayEditForm = true" class="btn btn-default"></i>
+	          <i class="fa fa-close" ng-click="home.deleteIcecream(icecream)" class="btn btn-default"></i>
+	        	<hr>
+	        </div>
+
+	        <!-- form to edit book -->
+	        <form ng-show="home.displayEditForm" ng-submit="home.updateIcecream(icecream)">
+	          <div class="form-group">
+	            <input type="text" ng-model="icecream.flavor" class="form-control" placeholder="Flavor">
+	          </div>
+	          <input type="submit" value="Save Ice Cream" class="btn btn-default"  ng-click="home.displayEditForm = false">
+	        </form>
+	</div>
+</div>
