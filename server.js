@@ -57,8 +57,16 @@ app.get('/api/icecreams/:id', function (req, res) {
  
 });
 
-app.put('//api/icecreams/:id', function (req, res) {
- 
+app.put('/api/icecreams/:id', function (req, res) {
+ 	var id = req.params.id;
+	Icecream.findById({_id: id}, function (err, foundIcecream){
+		if (err) console.log(err);
+		foundIcecream.flavor = req.body.flavor;
+		foundIcecream.save(function (err, saved){
+			if (err) { console.log(err);}
+			res.json(saved);
+		});
+	});
 });
 
 app.delete('/api/icecreams/:id', function (req, res) {

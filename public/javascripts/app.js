@@ -31,7 +31,7 @@ function HomeController(Icecream) {
   vm.newIcecream = {};
   vm.icecreams = Icecream.query();
   vm.createIcecream = createIcecream;
-  // vm.updateIcecream = updateIcecream;
+  vm.updateIcecream = updateIcecream;
   vm.deleteIcecream = deleteIcecream;
 
   function createIcecream() {
@@ -39,6 +39,10 @@ function HomeController(Icecream) {
   	vm.icecreams.push(vm.newIcecream);
   	console.log('new flavor', vm.newIcecream);
   	vm.newIcecream = {};
+  }
+
+  function updateIcecream(icecream) {
+  	Icecream.update({id: icecream._id}, icecream);
   }
 
   function deleteIcecream (icecream) {
