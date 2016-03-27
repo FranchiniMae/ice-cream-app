@@ -32,6 +32,7 @@ function HomeController(Icecream) {
   vm.icecreams = Icecream.query();
   vm.createIcecream = createIcecream;
   // vm.updateIcecream = updateIcecream;
+  vm.deleteIcecream = deleteIcecream;
 
   function createIcecream() {
   	Icecream.save(vm.newIcecream);
@@ -39,6 +40,13 @@ function HomeController(Icecream) {
   	console.log('new flavor', vm.newIcecream);
   	vm.newIcecream = {};
   }
+
+  function deleteIcecream (icecream) {
+    Icecream.remove({id: icecream._id});
+    var index = vm.icecreams.indexOf(icecream);
+    vm.icecreams.splice(index, 1);
+    console.log('deleted');
+	}
 }
 
 app.service('Icecream', function($resource) {

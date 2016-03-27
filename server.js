@@ -62,7 +62,10 @@ app.put('//api/icecreams/:id', function (req, res) {
 });
 
 app.delete('/api/icecreams/:id', function (req, res) {
- 
+ 	var id = req.params.id;
+	Icecream.remove({_id: id}, function (err){
+		if (err) console.log(err);
+	});
 });
 
 /*
