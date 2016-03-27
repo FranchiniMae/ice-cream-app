@@ -1,28 +1,37 @@
-<div class="container">	
-	<form ng-submit="home.createIcecream()">
-		<input type="text" ng-model="home.newIcecream.flavor" placeholder="Flavor">
-		<input type="text" ng-model="home.newIcecream.review" placeholder="Review">
-		<input type="submit" value="Add Ice Cream">
-	</form><Br><br>
+<h1>Ice Cream Reviews</h1><br>
 
-	<div ng-repeat="icecream in home.icecreams">
-	<div ng-hide="home.displayEditForm">
+<div class="container">
+<form class="add-icecream" ng-submit="home.createIcecream()">
+<div>
+<input type="text" ng-model="home.newIcecream.flavor" placeholder="Flavor" autofocus>
+</div><br>
+<div>
+<input type="text" ng-model="home.newIcecream.review" placeholder="Review" autofocus>
+</div><br>
+<div>
+<input type="submit" value="Add Ice Cream">
+</div>
+</form><Br><br>
+<hr>
 
-	          <b>Flavor:</b> {{icecream.flavor}}<br>
-	          <b>Review</b> {{icecream.review}}
-	          <!-- edit/delete buttons -->
-	          <i class="fa fa-pencil" ng-click="home.displayEditForm = true" class="btn btn-default"></i>
-	          <i class="fa fa-close" ng-click="home.deleteIcecream(icecream)" class="btn btn-default"></i>
-	        	<hr>
-	        </div>
+<div ng-repeat="icecream in home.icecreams">
+<div ng-hide="home.displayEditForm">
 
-	        <!-- form to edit book -->
-	        <form ng-show="home.displayEditForm" ng-submit="home.updateIcecream(icecream)">
-	          <div class="form-group">
-	            <input type="text" ng-model="icecream.flavor" class="form-control" placeholder="Flavor">
-	            <input type="text" ng-model="icecream.review" class="form-control" placeholder="Review">
-	          </div>
-	          <input type="submit" value="Save Ice Cream" class="btn btn-default"  ng-click="home.displayEditForm = false">
-	        </form>
-	</div>
+         <b>Flavor:</b> {{icecream.flavor}}<br>
+         <b>Review</b> {{icecream.review}}
+         <!-- edit/delete buttons -->
+         <i class="fa fa-pencil" ng-click="home.displayEditForm = true" class="btn btn-default"></i>
+         <i class="fa fa-close" ng-click="home.deleteIcecream(icecream)" class="btn btn-default"></i>
+        <hr>
+       </div>
+
+       <!-- form to edit ice cream -->
+       <form ng-show="home.displayEditForm" ng-submit="home.updateIcecream(icecream)">
+         <div class="form-group">
+           <input type="text" ng-model="icecream.flavor" class="form-control" placeholder="Flavor">
+           <input type="text" ng-model="icecream.review" class="form-control" placeholder="Review">
+         </div>
+         <input type="submit" value="Save Ice Cream" class="btn btn-default"  ng-click="home.displayEditForm = false"><br><br>
+       </form>
+</div>
 </div>
