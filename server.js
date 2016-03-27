@@ -27,6 +27,49 @@ app.use(bodyParser.json());  // ADD THIS LINE
 // connect to mongodb
 mongoose.connect('mongodb://localhost/ice_cream');
 
+/*
+* API routes
+*/
+
+app.get('/api/icecreams', function (req, res) {
+  Icecream.find(function (err, allIcecreams) {
+    if (err) {
+      res.status(500).json({ error: err.message });
+    } else {
+      res.json(allIcecreams);
+    }
+  });
+});
+
+app.post('/api/icecreams', function (req, res) {
+  var newIcecream = new Icecream(req.body);
+  newIcecream.save(function (err, savedIcecream) {
+    if (err) {
+      res.status(500).json({ error: err.message });
+    } else {
+      res.json(savedIcecream);
+    }
+  });
+});
+
+app.get('/api/icecreams/:id', function (req, res) {
+ 
+});
+
+app.put('//api/icecreams/:id', function (req, res) {
+ 
+});
+
+app.delete('/api/icecreams/:id', function (req, res) {
+ 
+});
+
+/*
+* Load `views/index.hbs` file
+* when any route is requested from the server
+*/
+
+
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, './views', 'index.html'));
 });
