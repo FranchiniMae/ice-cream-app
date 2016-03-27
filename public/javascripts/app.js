@@ -1,5 +1,5 @@
 console.log('app.js loaded!');
-var app = angular.module('iceCreamApp', ['ui.router']);
+var app = angular.module('iceCreamApp', ['ui.router', 'ngResource']);
 
 app.config(config);
 
@@ -26,7 +26,26 @@ function config($stateProvider, $urlRouterProvider, $locationProvider) {
 
   app.controller('HomeController', HomeController);
 
-function HomeController() {
+function HomeController(Icecream) {
   var vm = this;
-  vm.homeTest = "Welcome to the homepage!";
+  vm.newIcecream = {};
+  vm.icecreams = Icecream.query();
+  vm.createIcecream = createIcecream;
+  // vm.updateIcecream = updateIcecream;
+
+  function createIcecream() {
+  	Icecream.save(vm.newIcecream);
+  	vm.icecreams.push(vm.newIcecream);
+  	console.log('new flavor', vm.newIcecream);
+  	vm.newIcecream = {};
+  }
 }
+
+app.service('Icecream', function($resource) {
+  return $resource('http://localhost:3000/api/icecreams/:id', { id: '@_id' }, {
+    update: {
+      method: 'PUT' // this method issues a PUT request
+    }
+  });
+});
+

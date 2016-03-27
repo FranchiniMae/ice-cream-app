@@ -7,7 +7,8 @@ var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     path = require('path'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    Icecream = require('./models/icecream');
 
 // configure bodyParser (for receiving form data)
 app.use(bodyParser.urlencoded({ extended: true }));
