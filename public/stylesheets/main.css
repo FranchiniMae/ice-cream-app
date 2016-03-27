@@ -1,13 +1,24 @@
-h1 {
+body {
+	background: url('../images/geometry.png');
+}
+
+.maintitle {
 	font-family: 'Grand Hotel', cursive;
 	text-align: center;
+	font-size: 6em;
+	color: #E0DF76;
 }
 
 .navbar-default {
-  background-color: #C188D8;
-  border-color: #C188D8;
+  background-color: #78BBA6;
+  border-color: #78BBA6;
 }
 
 .navbar {
 	margin-bottom: 0px;
+}
+
+.btn-primary {
+	background-color: #B0CFE2;
+	border-color: #B0CFE2;
 }

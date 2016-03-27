@@ -1,4 +1,4 @@
-<h1 class="centered">Ice Scream Cone</h1>  
+<div class="maintitle">I Scream Cone</div>  
 
 
 <!-- Form to Add Ice Cream
@@ -19,14 +19,13 @@
 <hr>
 
   <div ng-repeat="icecream in home.icecreams">
-    <div ng-hide="home.displayEditForm">
+    <div class="scoop" ng-hide="home.displayEditForm">
        <b>Flavor:</b> {{icecream.flavor}}<br>
-       <b>Review</b> {{icecream.review}}
+       <b>Review:</b> {{icecream.review}}
        <!-- edit/delete buttons -->
        <i class="fa fa-pencil" ng-click="home.displayEditForm = true" class="btn btn-default"></i>
        <i class="fa fa-close" ng-click="home.deleteIcecream(icecream)" class="btn btn-default"></i>
-      <hr>
-     </div>
+     </div><br>
 
      <!-- form to edit ice cream -->
      <form ng-show="home.displayEditForm" ng-submit="home.updateIcecream(icecream)">
