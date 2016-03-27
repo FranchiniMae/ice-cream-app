@@ -8,8 +8,8 @@
 	<div ng-repeat="icecream in home.icecreams">
 	<div ng-hide="home.displayEditForm">
 
-	          {{icecream.flavor}}
-	          {{icecream.review}}
+	          <b>Flavor:</b> {{icecream.flavor}}<br>
+	          <b>Review</b> {{icecream.review}}
 	          <!-- edit/delete buttons -->
 	          <i class="fa fa-pencil" ng-click="home.displayEditForm = true" class="btn btn-default"></i>
 	          <i class="fa fa-close" ng-click="home.deleteIcecream(icecream)" class="btn btn-default"></i>
