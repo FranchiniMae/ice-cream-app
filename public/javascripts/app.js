@@ -26,6 +26,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider) {
 
   app.controller('HomeController', HomeController);
 
+
 function HomeController(Icecream) {
   var vm = this;
   vm.newIcecream = {};
