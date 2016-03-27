@@ -3,6 +3,7 @@ var mongoose = require('mongoose'),
 
 var IcecreamSchema = new Schema({
 	flavor: String,
+	review: String,
 });
 
 var Icecream = mongoose.model('Icecream', IcecreamSchema);

@@ -1,6 +1,7 @@
 <div class="container">	
 	<form ng-submit="home.createIcecream()">
 		<input type="text" ng-model="home.newIcecream.flavor" placeholder="Flavor">
+		<input type="text" ng-model="home.newIcecream.review" placeholder="Review">
 		<input type="submit" value="Add Ice Cream">
 	</form><Br><br>
 
@@ -8,6 +9,7 @@
 	<div ng-hide="home.displayEditForm">
 
 	          {{icecream.flavor}}
+	          {{icecream.review}}
 	          <!-- edit/delete buttons -->
 	          <i class="fa fa-pencil" ng-click="home.displayEditForm = true" class="btn btn-default"></i>
 	          <i class="fa fa-close" ng-click="home.deleteIcecream(icecream)" class="btn btn-default"></i>
@@ -18,6 +20,7 @@
 	        <form ng-show="home.displayEditForm" ng-submit="home.updateIcecream(icecream)">
 	          <div class="form-group">
 	            <input type="text" ng-model="icecream.flavor" class="form-control" placeholder="Flavor">
+	            <input type="text" ng-model="icecream.review" class="form-control" placeholder="Review">
 	          </div>
 	          <input type="submit" value="Save Ice Cream" class="btn btn-default"  ng-click="home.displayEditForm = false">
 	        </form>
