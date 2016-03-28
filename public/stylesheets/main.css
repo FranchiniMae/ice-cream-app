@@ -6,12 +6,12 @@ body {
 	font-family: 'Grand Hotel', cursive;
 	text-align: center;
 	font-size: 6em;
-	color: #9A9A9A;
+	color: #96C16A;
 }
 
 .navbar-default {
-  background-color: #78BBA6;
-  border-color: #78BBA6;
+  background-color: #A8D2E6;
+  border-color: #A8D2E6;
 }
 
 .navbar {
@@ -21,4 +21,11 @@ body {
 .btn-primary {
 	background-color: #B0CFE2;
 	border-color: #B0CFE2;
+}
+ 
+.explanation {
+	text-align: center;
+	font-size: 1.5em;
+	font-family: 'Didact Gothic', sans-serif;
+	color: #B6BDBD;
 }
