@@ -39,7 +39,7 @@
   <Br><br>
 <hr>
 
-  <div ng-repeat="icecream in home.icecreams">
+  <div ng-repeat="icecream in home.icecreams | orderBy:'-rating'">
     <div class="scoop" ng-hide="home.displayEditForm">
        <b>Flavor:</b> {{icecream.flavor}}<br>
        <b>Review:</b> {{icecream.review}}<br>
