@@ -37,3 +37,9 @@ body {
 .fa-pencil {
 	margin-left: 90%;
 }
+
+.icecream {
+	width: 400px;
+	height: 425px;
+	background: url('http://www.misskatecuttables.com/uploads/shopping_cart/7725/large_cute-ice-cream-cone.png');
+}
