@@ -10,7 +10,7 @@
     </div>
     <div class="form-group">
       <input type="text" class="form-control" ng-model="home.newIcecream.review" placeholder="Review" autofocus>
-    </div><br>
+    </div><br><br>
 <!-- RADIO BUTTONS -->
     <label>Rating: </label>
     <div class="form-group">
@@ -31,7 +31,7 @@
             </label>
     </div>
 
-      <div>
+      <div><br>
       <input type="submit" value="Add Ice Cream" class="btn btn-primary">
     </div>
   </form>
@@ -43,9 +43,7 @@
     <div class="scoop" ng-hide="home.displayEditForm">
        <b>Flavor:</b> {{icecream.flavor}}<br>
        <b>Review:</b> {{icecream.review}}<br>
-       <b>Rating:</b> {{icecream.rating}}<br>
-       <!-- edit/delete buttons -->
-       <i class="fa fa-pencil" ng-click="home.displayEditForm = true" class="btn btn-default"></i>
+       <b>Rating:</b> {{icecream.rating}}<i class="fa fa-pencil" ng-click="home.displayEditForm = true" class="btn btn-default"></i>
        <i class="fa fa-close" ng-click="home.deleteIcecream(icecream)" class="btn btn-default"></i>
      </div><br>
 

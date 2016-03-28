@@ -1,5 +1,5 @@
 body {
-	background: url('../images/geometry.png');
+	background: url('../images/swirl.png');
 }
 
 .maintitle {
@@ -32,4 +32,8 @@ body {
 
 .add-icecream {
 	text-align: center;
+}
+
+.fa-pencil {
+	margin-left: 90%;
 }
