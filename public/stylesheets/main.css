@@ -1,5 +1,6 @@
 body {
 	background: url('../images/swirl.png');
+	color: #887E7E;
 }
 
 .maintitle {
@@ -43,6 +44,10 @@ body {
 	color: #F1B1B1;
 }
 
+#rating {
+	color: #887E7E;
+}
+
 .icecream {
 	text-align: center;
 	position: absolute;
@@ -65,4 +70,8 @@ body {
   -ms-transform: rotate(-2deg);
   -webkit-transform: rotate(-2deg);
   transform: rotate(-2deg);
+}
+
+.scoop {
+	color: #5B585F;
 }

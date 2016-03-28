@@ -12,7 +12,7 @@
       <input type="text" class="form-control" ng-model="home.newIcecream.review" placeholder="Review" autofocus>
     </div><br><br>
 <!-- RADIO BUTTONS -->
-    <label>Rating: </label>
+    <label id="rating">Rating:  </label>
     <div class="form-group">
             <label>
                 <input type="radio" name="rating" value="1" ng-model="home.newIcecream.rating"> 1
@@ -39,7 +39,7 @@
   <Br><br>
 <hr>
 
-  <div ng-repeat="icecream in home.icecreams | orderBy:'-rating'">
+  <div ng-repeat="icecream in home.icecreams">
     <div class="scoop" ng-hide="home.displayEditForm">
        <b>Flavor:</b> {{icecream.flavor}}<br>
        <b>Review:</b> {{icecream.review}}<br>
