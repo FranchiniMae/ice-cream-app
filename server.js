@@ -16,9 +16,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // serve static files from public folder
 app.use(express.static(__dirname + '/public'));
 
-// set view engine to hbs (handlebars)
-// app.set('view engine', 'hbs');
-
 // parse form data ( application/x-www-form-urlencoded )
 app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
