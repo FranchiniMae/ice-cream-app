@@ -63,6 +63,7 @@ app.put('/api/icecreams/:id', function (req, res) {
 		if (err) console.log(err);
 		foundIcecream.flavor = req.body.flavor;
 		foundIcecream.review = req.body.review;
+    foundIcecream.rating = req.body.rating;
 		foundIcecream.save(function (err, saved){
 			if (err) { console.log(err);}
 			res.json(saved);
