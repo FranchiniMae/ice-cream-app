@@ -4,4 +4,4 @@
 
 I Scream Cone is an app where users can add any ice cream flavor and write a review/rate it. Great for ice cream lovers or people who are interested in learning more about ice cream!
 
-![alt tag](http://gph.is/1IZWJs1)
+![picture alt](http://i.giphy.com/ul3VFVXDNQz2E.gif)
