@@ -3,81 +3,83 @@
 
 <!-- Form to Add Ice Cream
  -->
- <div class="container col-md-4 col-md-offset-4">
-  <form class="add-icecream form-inline" ng-submit="home.createIcecream()">
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="home.newIcecream.flavor" placeholder="Flavor" autofocus>
+ <div class="container main">
+
+   <div class="icecream col-xs-6 col-md-4"></div>
+
+   <div class="container col-xs-12 col-sm-6 col-md-8">
+    <form class="add-icecream form-inline" ng-submit="home.createIcecream()">
+      <div class="form-group">
+        <input type="text" class="form-control" ng-model="home.newIcecream.flavor" placeholder="Flavor" autofocus>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" ng-model="home.newIcecream.review" placeholder="Review" autofocus>
+      </div><br><br>
+  <!-- RADIO BUTTONS -->
+      <label id="rating">Rating:  </label>
+      <div class="form-group">
+              <label>
+                  <input type="radio" name="rating" value="1" ng-model="home.newIcecream.rating"> 1
+              </label>
+              <label>
+                  <input type="radio" name="rating" value="2" ng-model="home.newIcecream.rating"> 2
+              </label>
+               <label>
+                  <input type="radio" name="rating" value="3" ng-model="home.newIcecream.rating"> 3
+              </label>
+               <label>
+                  <input type="radio" name="rating" value="4" ng-model="home.newIcecream.rating"> 4
+              </label>
+               <label>
+                  <input type="radio" name="rating" value="5" ng-model="home.newIcecream.rating"> 5
+              </label>
+      </div>
+
+        <div><br>
+        <input type="submit" value="Add Ice Cream" class="btn btn-primary">
+      </div>
+    </form>
+
+    <Br><br>
+  <hr>
+
+    <div ng-repeat="icecream in home.icecreams">
+      <div class="scoop col-xs-12 col-sm-6 col-md-8" ng-hide="home.displayEditForm">
+         <b>Flavor:</b> {{icecream.flavor}}<br>
+         <b>Review:</b> {{icecream.review}}<br>
+         <b>Rating:</b> {{icecream.rating}}<i class="fa fa-pencil" ng-click="home.displayEditForm = true" class="btn btn-default"></i>
+         <i class="fa fa-close" ng-click="home.deleteIcecream(icecream)" class="btn btn-default"></i>
+       </div><br>
+
+       <!-- form to edit ice cream -->
+       <form ng-show="home.displayEditForm" ng-submit="home.updateIcecream(icecream)">
+         <div class="form-group">
+           <input type="text" ng-model="icecream.flavor" class="form-control" placeholder="Flavor">
+           <input type="text" ng-model="icecream.review" class="form-control" placeholder="Review">
+         </div>
+
+         <label>Rating Ice Cream</label>
+      <div class="form-group">
+              <label>
+                  <input type="radio" name="rating" value="1" ng-model="icecream.rating"> 1
+              </label>
+              <label>
+                  <input type="radio" name="rating" value="2" ng-model="icecream.rating"> 2
+              </label>
+               <label>
+                  <input type="radio" name="rating" value="3" ng-model="icecream.rating"> 3
+              </label>
+               <label>
+                  <input type="radio" name="rating" value="4" ng-model="icecream.rating"> 4
+              </label>
+               <label>
+                  <input type="radio" name="rating" value="5" ng-model="icecream.rating"> 5
+              </label>
+      </div>
+         <input type="submit" value="Save Ice Cream" class="btn btn-default"  ng-click="home.displayEditForm = false"><br><br>
+       </form>
     </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="home.newIcecream.review" placeholder="Review" autofocus>
-    </div><br><br>
-<!-- RADIO BUTTONS -->
-    <label id="rating">Rating:  </label>
-    <div class="form-group">
-            <label>
-                <input type="radio" name="rating" value="1" ng-model="home.newIcecream.rating"> 1
-            </label>
-            <label>
-                <input type="radio" name="rating" value="2" ng-model="home.newIcecream.rating"> 2
-            </label>
-             <label>
-                <input type="radio" name="rating" value="3" ng-model="home.newIcecream.rating"> 3
-            </label>
-             <label>
-                <input type="radio" name="rating" value="4" ng-model="home.newIcecream.rating"> 4
-            </label>
-             <label>
-                <input type="radio" name="rating" value="5" ng-model="home.newIcecream.rating"> 5
-            </label>
-    </div>
-
-      <div><br>
-      <input type="submit" value="Add Ice Cream" class="btn btn-primary">
-    </div>
-  </form>
-
-  <Br><br>
-<hr>
-
-  <div ng-repeat="icecream in home.icecreams">
-    <div class="scoop" ng-hide="home.displayEditForm">
-       <b>Flavor:</b> {{icecream.flavor}}<br>
-       <b>Review:</b> {{icecream.review}}<br>
-       <b>Rating:</b> {{icecream.rating}}<i class="fa fa-pencil" ng-click="home.displayEditForm = true" class="btn btn-default"></i>
-       <i class="fa fa-close" ng-click="home.deleteIcecream(icecream)" class="btn btn-default"></i>
-     </div><br>
-
-     <!-- form to edit ice cream -->
-     <form ng-show="home.displayEditForm" ng-submit="home.updateIcecream(icecream)">
-       <div class="form-group">
-         <input type="text" ng-model="icecream.flavor" class="form-control" placeholder="Flavor">
-         <input type="text" ng-model="icecream.review" class="form-control" placeholder="Review">
-       </div>
-
-       <label>Rating Ice Cream</label>
-    <div class="form-group">
-            <label>
-                <input type="radio" name="rating" value="1" ng-model="icecream.rating"> 1
-            </label>
-            <label>
-                <input type="radio" name="rating" value="2" ng-model="icecream.rating"> 2
-            </label>
-             <label>
-                <input type="radio" name="rating" value="3" ng-model="icecream.rating"> 3
-            </label>
-             <label>
-                <input type="radio" name="rating" value="4" ng-model="icecream.rating"> 4
-            </label>
-             <label>
-                <input type="radio" name="rating" value="5" ng-model="icecream.rating"> 5
-            </label>
-    </div>
-       <input type="submit" value="Save Ice Cream" class="btn btn-default"  ng-click="home.displayEditForm = false"><br><br>
-     </form>
   </div>
 </div>
 
-<div class="icecream">
-
-</div>
 
