@@ -36,6 +36,11 @@ body {
 
 .fa-pencil {
 	margin-left: 90%;
+	color: #A6CFE4;
+}
+
+.fa-close {
+	color: #F1B1B1;
 }
 
 .icecream {
